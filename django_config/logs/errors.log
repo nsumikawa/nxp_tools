@@ -1,0 +1,618 @@
+2019-01-23 15:17:31,301 - ERROR - 135 - django.request - Internal Server Error: /excursions/ajax/views/product_excursions/toggle
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 131, in get_response
+    response = middleware_method(request, response)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\middleware\common.py", line 115, in process_response
+    if response.status_code == 404:
+AttributeError: 'dict' object has no attribute 'status_code'
+2019-01-23 15:18:06,782 - ERROR - 135 - django.request - Internal Server Error: /excursions/ajax/views/product_excursions/toggle
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 131, in get_response
+    response = middleware_method(request, response)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\middleware\common.py", line 115, in process_response
+    if response.status_code == 404:
+AttributeError: 'dict' object has no attribute 'status_code'
+2019-01-23 15:19:45,539 - ERROR - 135 - django.request - Internal Server Error: /excursions/ajax/views/product_excursions/toggle
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 131, in get_response
+    response = middleware_method(request, response)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\middleware\common.py", line 115, in process_response
+    if response.status_code == 404:
+AttributeError: 'dict' object has no attribute 'status_code'
+2019-01-28 11:42:16,938 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 46, in logs
+    for s in download_log.groupby('date', sort=True):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\generic.py", line 5162, in groupby
+    **kwargs)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 1848, in groupby
+    return klass(obj, by, **kwds)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 516, in __init__
+    mutated=self.mutated)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 2934, in _get_grouper
+    raise KeyError(gpr)
+KeyError: 'date'
+2019-01-28 11:42:59,680 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 47, in logs
+    for s in download_log.groupby('date', sort=True):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\generic.py", line 5162, in groupby
+    **kwargs)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 1848, in groupby
+    return klass(obj, by, **kwds)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 516, in __init__
+    mutated=self.mutated)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 2934, in _get_grouper
+    raise KeyError(gpr)
+KeyError: 'date'
+2019-01-28 11:43:27,513 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 47, in logs
+    for s in download_log.groupby('date', sort=True):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\generic.py", line 5162, in groupby
+    **kwargs)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 1848, in groupby
+    return klass(obj, by, **kwds)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 516, in __init__
+    mutated=self.mutated)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 2934, in _get_grouper
+    raise KeyError(gpr)
+KeyError: 'date'
+2019-01-28 11:44:25,776 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 47, in logs
+    for s in download_log.groupby('date', sort=True):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\generic.py", line 5162, in groupby
+    **kwargs)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 1848, in groupby
+    return klass(obj, by, **kwds)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 516, in __init__
+    mutated=self.mutated)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\pandas\core\groupby.py", line 2934, in _get_grouper
+    raise KeyError(gpr)
+KeyError: 'date'
+2019-01-28 11:56:47,187 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 53, in logs
+    return render(request, 'main/log.html', context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2019-01-28 11:57:03,997 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 53, in logs
+    return render(request, 'main/log.html', context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2019-01-28 11:57:19,092 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 53, in logs
+    return render(request, 'main/log.html', context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2019-01-28 11:58:28,637 - ERROR - 135 - django.request - Internal Server Error: /main/logs/
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\views.py", line 53, in logs
+    return render(request, 'main/log.html', context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loaders\base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 515, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2019-01-28 11:58:44,720 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 11:58:47,526 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 46, in get
+    context['excursions'].append( len(obj.wplot.productstacked_set.all()) )
+AttributeError: 'WPLot' object has no attribute 'productstacked_set'
+2019-01-28 11:58:58,440 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 46, in get
+    context['excursions'].append( len(obj.wplot.productstacked_set.all()) )
+AttributeError: 'WPLot' object has no attribute 'productstacked_set'
+2019-01-28 11:59:00,059 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 46, in get
+    context['excursions'].append( len(obj.wplot.productstacked_set.all()) )
+AttributeError: 'WPLot' object has no attribute 'productstacked_set'
+2019-01-28 11:59:47,010 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:00:47,611 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:01:36,003 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:01:51,915 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:02:13,880 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:04:35,443 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:07:13,822 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.lot.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-28 12:07:22,293 - ERROR - 135 - django.request - Internal Server Error: /main/ajax/log/get
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\main\ajax\binmap_log.py", line 45, in get
+    context['events'].append( len(obj.lot.wplot.stacked_set.all()) )
+AttributeError: 'NoneType' object has no attribute 'stacked_set'
+2019-01-30 15:15:33,388 - ERROR - 135 - django.request - Internal Server Error: /events/test
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\views.py", line 36, in test
+    return render(request, 'stacked/test.html')
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: stacked/test.html
+2019-02-01 10:41:12,443 - ERROR - 135 - django.request - Internal Server Error: /events/ajax/views/stacked/events
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\ajax\views\stacked.py", line 70, in events
+    record_exception( e )
+NameError: global name 'record_exception' is not defined
+2019-02-04 16:12:48,869 - ERROR - 135 - django.request - Internal Server Error: /events/ajax/views/stacked/products
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\ajax\views\stacked.py", line 105, in products
+    start, end = convert_date_str( type, date )
+  File "D:\git\excursion\utils\date.py", line 25, in convert_date_str
+    elif date_type == 'Month' : return _convert_month_str( date_str )
+  File "D:\git\excursion\utils\date.py", line 119, in _convert_month_str
+    date = datetime.strptime(date_str, '%m-%Y')
+TypeError: strptime() argument 1 must be string, not None
+2019-02-04 16:14:45,648 - ERROR - 135 - django.request - Internal Server Error: /events/ajax/views/stacked/products
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\ajax\views\stacked.py", line 105, in products
+    start, end = convert_date_str( type, date )
+  File "D:\git\excursion\utils\date.py", line 25, in convert_date_str
+    elif date_type == 'Month' : return _convert_month_str( date_str )
+  File "D:\git\excursion\utils\date.py", line 119, in _convert_month_str
+    date = datetime.strptime(date_str, '%m-%Y')
+TypeError: strptime() argument 1 must be string, not None
+2019-02-04 16:17:55,801 - ERROR - 135 - django.request - Internal Server Error: /events/ajax/views/stacked/products
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\ajax\views\stacked.py", line 105, in products
+    start, end = convert_date_str( type, date )
+  File "D:\git\excursion\utils\date.py", line 25, in convert_date_str
+    elif date_type == 'Month' : return _convert_month_str( date_str )
+  File "D:\git\excursion\utils\date.py", line 119, in _convert_month_str
+    date = datetime.strptime(date_str, '%m-%Y')
+TypeError: strptime() argument 1 must be string, not None
+2019-02-04 16:44:35,315 - ERROR - 135 - django.request - Internal Server Error: /events/test
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\views.py", line 36, in stacked
+    return render(request, 'events/stacked.html')
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'test' not found. 'test' is not a valid view function or pattern name.
+2019-02-04 16:55:40,529 - ERROR - 135 - django.request - Internal Server Error: /events/test
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\views.py", line 36, in stacked
+    return render(request, 'events/stacked.html')
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'hotspots' not found. 'hotspots' is not a valid view function or pattern name.
+2019-02-04 16:55:42,082 - ERROR - 135 - django.request - Internal Server Error: /events/test
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\events\views.py", line 36, in stacked
+    return render(request, 'events/stacked.html')
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\urls\base.py", line 91, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\urls\resolvers.py", line 497, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+NoReverseMatch: Reverse for 'hotspots' not found. 'hotspots' is not a valid view function or pattern name.
+2019-02-05 13:17:01,569 - ERROR - 135 - django.request - Internal Server Error: /binmap/ajax/views/binmap_gallery
+Traceback (most recent call last):
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\b31390-14\Anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\git\excursion\binmap\ajax\binmap_gallery.py", line 47, in binmap
+    record_exception( e )
+NameError: global name 'record_exception' is not defined

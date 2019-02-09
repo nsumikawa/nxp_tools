@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+
+{% block content %}
+
+<div class="panel-header panel-header-sm">
+</div>
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12" align='center' >
+      <div class="card text-left" style='width : 30rem'>
+
+        <!-- Card title -->
+        <div class="card-header ">
+          <div class='row'>
+            <div class='col'>
+              <!-- <h5 class="card-category" id=calendar_type>Excursion Information</h5> -->
+              <h4 class="card-title">Sign in with credentials</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body ">
+
+          <form action="{% url 'auth:login' %}" method="post" class="form">
+              {% csrf_token %}
+              {% bootstrap_form form layout='inline' %}
+              {% buttons %}
+
+              <button type="submit" class="btn btn-primary">
+                {% bootstrap_icon "user" %} Login
+              </button>
+              {% endbuttons %}
+          </form>
+
+          <hr>
+          <div class="col-6 text-left">
+            <a href="/accounts/register" >
+              <small>Create new account</small>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
