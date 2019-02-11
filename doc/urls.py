@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     # ex: /
+    url(r'^test/$', views.test, name='test'),
     # url(r'^$', views.training_doc, name='training_doc'),
     # url(r'^training_doc/$', views.training_doc, name='training_doc'),
     # url(r'^training_doc/(?P<dir_id>[0-9]+)/$', views.training_doc, name='training_doc'),

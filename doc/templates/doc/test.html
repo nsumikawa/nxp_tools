@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+
+
+{% block javascript %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="panel-header panel-header-sm">
+</div>
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+
+        <!-- Card title -->
+        <div class="card-header ">
+          <h5 class="card-category">System Information</h5>
+          <h4 class="card-title">Log</h4>
+        </div>
+
+        <!-- Table with Log information -->
+        <div class="card-body ">
+          <canvas id="testplot" style="width: 100px; height:100px"></canvas>
+          <canvas id="test_canvas" style="width: 100px; height:100px"></canvas>
+        </div>
+
+        <!-- Footer with update information  -->
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="now-ui-icons loader_refresh spin"></i>
+            Updated x minutes ago
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,181 @@
+2019-02-08 21:06:40,753 - WARNING - 152 - django.request - Not Found: /
+2019-02-08 21:06:48,061 - WARNING - 152 - django.request - Not Found: /admin
+2019-02-08 21:06:48,213 - WARNING - 152 - django.request - Not Found: /favicon.ico
+2019-02-08 21:09:07,779 - WARNING - 152 - django.request - Not Found: /admin
+2019-02-09 06:46:19,756 - WARNING - 152 - django.request - Not Found: /
+2019-02-09 06:46:27,482 - WARNING - 152 - django.request - Not Found: /test
+2019-02-09 06:46:58,464 - ERROR - 135 - django.request - Internal Server Error: /doc/test/
+Traceback (most recent call last):
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\nxa18331\Desktop\python\git\nxp_tools\doc\views.py", line 64, in test
+    return render(request, 'doc/test.html', {} )
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: doc/test.html
+2019-02-09 06:47:21,362 - ERROR - 135 - django.request - Internal Server Error: /doc/test/
+Traceback (most recent call last):
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\nxa18331\Desktop\python\git\nxp_tools\doc\views.py", line 64, in test
+    return render(request, 'doc/test.html', {} )
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+NoReverseMatch: u'events' is not a registered namespace
+2019-02-09 06:48:03,273 - ERROR - 135 - django.request - Internal Server Error: /doc/test/
+Traceback (most recent call last):
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\nxa18331\Desktop\python\git\nxp_tools\doc\views.py", line 64, in test
+    return render(request, 'doc/test.html', {} )
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+NoReverseMatch: u'events' is not a registered namespace
+2019-02-09 06:49:23,483 - ERROR - 135 - django.request - Internal Server Error: /doc/test/
+Traceback (most recent call last):
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\nxa18331\Desktop\python\git\nxp_tools\doc\views.py", line 64, in test
+    return render(request, 'doc/test.html', {} )
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+NoReverseMatch: u'events' is not a registered namespace
+2019-02-09 06:50:19,529 - ERROR - 135 - django.request - Internal Server Error: /doc/test/
+Traceback (most recent call last):
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\nxa18331\Desktop\python\git\nxp_tools\doc\views.py", line 64, in test
+    return render(request, 'doc/test.html', {} )
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\backends\django.py", line 66, in render
+    return self.template.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 207, in render
+    return self._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\loader_tags.py", line 177, in render
+    return compiled_parent._render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\base.py", line 957, in render_annotated
+    return self.render(context)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\template\defaulttags.py", line 458, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\nxa18331\AppData\Local\Continuum\anaconda2\lib\site-packages\django\urls\base.py", line 87, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+NoReverseMatch: u'excursions' is not a registered namespace

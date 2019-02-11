@@ -49,7 +49,20 @@ from django.core.urlresolvers import reverse
 #
 #     return render(request, 'training/training_doc.html', context)
 #
-#
+
+def test( request ) :
+    """ returns a list of most recently added documents """
+    #
+    # from itertools import chain
+    #
+    # new_doc = Document.objects.order_by('-date')[:10]
+    # new_faq = FAQ.objects.order_by('-date')[:10]
+    #
+    # context = {'page_type':'BOTH'}
+    # context['documents'] = list(chain(new_doc, new_faq))
+
+    return render(request, 'doc/test.html', {} )
+
 # def new_documents( request ) :
 #     """ returns a list of most recently added documents """
 #
