@@ -72,14 +72,14 @@
 
           <li id='sidebar_Exensio_Yield_Training'>
             <a onclick="main_page_class.open('Exensio Yield', 'Training')">
-              <i class="fas fa-spinner"></i>
+              <i class="fab fa-erlang"></i>
               <p>Exensio Yield</p>
             </a>
           </li>
 
           <li id='sidebar_Optimal_Training'>
             <a onclick="main_page_class.open('Optimal+', 'Training')">
-              <i class="fas fa-spinner"></i>
+              <i class="fas fa-plus"></i>
               <p>Optimal+</p>
             </a>
           </li>
@@ -99,15 +99,29 @@
 
           <li id='sidebar_Exensio_Yield_Template'>
             <a onclick="main_page_class.open('Exensio Yield', 'Template')">
-              <i class="fas fa-spinner"></i>
+              <i class="fab fa-erlang"></i>
               <p>Exensio Yield</p>
             </a>
           </li>
 
           <li id='sidebar_Optimal_Template'>
             <a onclick="main_page_class.open('Optimal+', 'Template')">
-              <i class="fas fa-spinner"></i>
+              <i class="fas fa-plus"></i>
               <p>Optimal+</p>
+            </a>
+          </li>
+
+          <li id='sidebar_Tableau_Template'>
+            <a onclick="main_page_class.open('Tableau', 'Template')">
+              <i class="fas fa-plus-square"></i>
+              <p>Tableau</p>
+            </a>
+          </li>
+
+          <li id='sidebar_JMP_Template'>
+            <a onclick="main_page_class.open('JMP', 'Template')">
+              <i class="fas fa-spinner"></i>
+              <p>JMP</p>
             </a>
           </li>
           {% if user.is_superuser %}
@@ -163,10 +177,10 @@
                     <span class="d-lg-none d-md-block">Stats</span>
                   </p>
                 </a>
-              </li>
+              </li> -->
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="now-ui-icons location_world"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
@@ -177,7 +191,7 @@
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-              </li> -->
+              </li>
 
               {% if user.is_authenticated %}
                 <li class="nav-item">

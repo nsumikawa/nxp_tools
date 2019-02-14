@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="{% static 'css/tooltips.css' %}"> -->
+
+{% endblock %}
+
+
+{% block javascript %}
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
+
+<script>
+class profile{
+
+  constructor( user_id ){
+
+    this.user_id = user_id
+    this.init_page()
+  }
+
+  init_page(){
+    //initializes or reinitializes the page
+
+    console.log( 'init page' )
+    //update the fields based on the django user model object
+    $('#username').val( '{{request.user.username}}' )
+    $('#email').val( '{{request.user.email}}' )
+    $('#first').val( '{{request.user.first_name}}' )
+    $('#last').val( '{{request.user.last_name}}' )
+
+    //query the extended user attributes to get remaining data
+  }
+
+  update(){
+    // console.log( 'init page' )
+    // console.log( 'username : ' + $('#username').val() )
+    // console.log( 'email : ' + $('#first').val() )
+    // console.log( 'email : ' + $('#last').val() )
+    // console.log( 'email : ' + $('#location').val() )
+    // console.log( 'email : ' + $('#position').val() )
+    // console.log( 'email : ' + $('#group').val() )
+    // console.log( 'email : ' + $('#bio').val() )
+
+    var self = this;
+
+    //ajax request to push content to the database.
+    $.ajax({
+        url: url_prefix() + '/ajax/views/category/pull',
+        data: { 'username': $('#username').val(),
+                'email': $('#email').val(),
+                'first': $('#first').val(),
+                'last': $('#last').val(),
+                'location': $('#location').val(),
+                'position': $('#position').val(),
+                'group': $('#group').val(),
+                'bio': $('#bio').val(),
+                'id': self.user_id,
+              },
+
+        success: function (data) {
+
+        },
+        error: function(data) {
+            $("#MESSAGE-DIV").html("Something went wrong!");
+        }
+    });
+    return false;
+
+  }
+}
+
+profile_class = new profile( 1 )
+
+</script>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="panel-header panel-header-sm">
+</div>
+
+
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Edit Profile</h5>
+        </div>
+
+        <div class="card-body">
+          <form>
+
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control" placeholder="Username" id='username'>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input type="email" class="form-control" placeholder="Email" id='email'>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" placeholder="First Name" id='first'>
+                </div>
+              </div>
+
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last Name" id='last'>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                </div>
+              </div>
+            </div> -->
+
+
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Location</label>
+                  <input type="text" class="form-control" list="Location" placeholder="Location" id='location'>
+                  <datalist id="Location">
+                    <option value="CHD">
+                    <option value="ATX">
+                    <option value="TJN">
+                    <option value="KLM">
+                  </datalist>
+                </div>
+              </div>
+
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Business Group</label>
+                  <input type="text" class="form-control" list="Group" placeholder="Group" id='group'>
+                  <datalist id="Group">
+                    <option value="Manufacturing">
+                    <option value="AMP">
+                    <option value="AAA">
+                    <option value="IDA">
+                    <option value="Sensors">
+                  </datalist>
+                </div>
+              </div>
+
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Position</label>
+                  <input type="text" class="form-control" list="Position" placeholder="Position" id='position'>
+                  <datalist id="Position">
+                    <option value="Device">
+                    <option value="Product">
+                    <option value="Test">
+                    <option value="Other">
+                  </datalist>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>About Me</label>
+                  <textarea rows="4" cols="80" class="form-control"  id='bio'></textarea>
+
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+
+        </div>
+
+        <div class="card-footer">
+          <div class='col' align='right'>
+            <a onclick="profile_class.update()">
+              <div class="btn btn-round btn-success no-caret">
+                <i class="fas fa-sign-in-alt" style='padding-right:10px;'></i> Update
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="image">
+          <img src="../assets/img/bg5.jpg" alt="...">
+        </div>
+        <div class="card-body">
+          <div class="author">
+            <a href="#">
+              <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+              <h5 class="title">Mike Andrew</h5>
+            </a>
+            <p class="description">
+              michael24
+            </p>
+          </div>
+          <p class="description text-center">
+            "Lamborghini Mercy
+            <br> Your chick she so thirsty
+            <br> I'm in that two seat Lambo"
+          </p>
+        </div>
+        <hr>
+        <div class="button-container">
+          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+            <i class="fab fa-google-plus-g"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

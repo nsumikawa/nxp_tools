@@ -82,7 +82,7 @@ class main_page{
 
   open( tool, type ){
 
-    if( window.location.pathname == url_prefix() + '/accounts/login/' ){
+    if( window.location.pathname != url_prefix() ){
       localStorage.setItem("page_tool", tool);
       localStorage.setItem("page_type", type);
       window.location.href = window.location.origin + url_prefix()
