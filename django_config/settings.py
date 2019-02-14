@@ -49,7 +49,7 @@ INSTALLED_APPS = (
 
 
     'doc',
-    'system',
+    # 'system',
     # 'office365',
 )
 
