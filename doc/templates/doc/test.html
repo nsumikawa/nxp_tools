@@ -1,13 +1,98 @@
 {% extends 'base.html' %}
 
+{% load bootstrap3 %}
 {% load static %}
 
 {% block css %}
+<style>
+  #element_modal {
+    padding-top: 10vh;
+    padding-right: 20vw;
+    padding-left: 30vw;
+    padding-bottom: 10vh;
+  }
+
+  div.modal {
+      padding-top: 5vh;
+      padding-right: 40px;
+      padding-left: 40px;
+      padding-bottom: 5vh;
+  }
+
+
+  div.modal-body{
+      max-height: 70vh;
+      overflow-y: auto;
+  }
+
+</style>
 {% endblock %}
 
 
 
 {% block javascript %}
+
+
+<script>
+
+  ///////////////////////////////////////////////////////////////////////////
+  // THIS Should be moved into external file
+  ///////////////////////////////////////////////////////////////////////////
+
+
+
+function initialize( tool, type, user_status ){
+
+  $('#top_navbar_brand').html( tool )
+  $('#main_title').html( type )
+
+  var c_form = document.forms.category_form;
+  var c_form_name = 'category_form'
+  var c_elements_div = 'category_form_elements'
+  category_form_class = new category_form( 'category_form_modal', c_form, c_form_name, c_elements_div )
+  category_html_class = new category_html( 'category_root', tool, type, user_status )
+
+  var e_form = document.forms.element_form;
+  var e_form_name = 'element_form'
+  var e_document_div = 'element_form_documents'
+  element_form_class = new element_form( 'element_form_modal', e_form, e_form_name, e_document_div )
+  element_html_class = new element_html( tool, type, user_status )
+
+  var d_form = document.forms.document_form;
+  var d_form_name = 'document_form'
+  document_form_class = new document_form( 'document_form_modal', d_form, d_form_name )
+
+  element_modal_html_class = new element_modal_html( 'element_modal', $('#document_table') )
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+<script>
+///////////////////////////////////////////////////////////////////////////
+// THIS content should remain on this page
+///////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    // var _user_status = {{user.is_superuser}}
+    // console.log("DOM fully loaded and parsed -- " + str(_user_status) );
+    // initialize( 'Exensio Yield', 'Training', '{{user.is_superuser}}')
+    // category_html_class.page()
+
+    // var main_page_class = new main_page('{{user.is_superuser}}')
+    // category_html_class.page()
+    // element_html_class.page()
+
+});
+</script>
 {% endblock %}
 
 
@@ -18,21 +103,33 @@
 <div class="panel-header panel-header-sm">
 </div>
 
-<div class="content">
+<div class="content" id='main'>
   <div class="row">
     <div class="col-md-12">
       <div class="card ">
 
         <!-- Card title -->
         <div class="card-header ">
-          <h5 class="card-category">System Information</h5>
-          <h4 class="card-title">Log</h4>
+          <div class="row align-items-center">
+            <div class="col">
+              <!-- <h5 class="card-category">System Information</h5> -->
+              <h4 class="card-title" id='main_title'>Log</h4>
+            </div>
+
+            {% if user.is_superuser %}
+            <div class="col" align='right' style='max-width:200px; padding-right:30px''>
+              <span class="badge badge-pill badge-success"
+                    onclick="category_form_class.new()">
+                Add Category<i class="fa fa-plus" style="padding-left:10px"></i>
+              </span>
+            </div>
+            {% endif %}
+          </div>
         </div>
 
         <!-- Table with Log information -->
-        <div class="card-body ">
-          <canvas id="testplot" style="width: 100px; height:100px"></canvas>
-          <canvas id="test_canvas" style="width: 100px; height:100px"></canvas>
+        <div class="card-body" id='category_root'>
+
         </div>
 
         <!-- Footer with update information  -->
@@ -48,5 +145,290 @@
     </div>
   </div>
 </div>
+
+
+
+<div id="element_modal" class="modal">
+  <div class="card shadow">
+    <div class="card-header bg-transparent">
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- <h6 class="text-uppercase ls-1 mb-1">Event</h6> -->
+          <h2 class="text-uppercase mb-0" id='element_name'>Element</h2>
+        </div>
+
+        <div class="col" align='right' style='max-width:100px'>
+          <button type="button"
+                  onclick="document.getElementById('element_modal').style.display='None'"
+                  class="btn btn-round btn-danger btn-icon no-caret">
+            <i class="fa fa-times"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="modal-body">
+      <div class="card-body">
+        <div class="row">
+          <h5 class="text-uppercase ls-1 mb-1">Description</h5>
+        </div>
+        <div class="row">
+          <h6 class="text ls-1 mb-1" id='element_description'>Description</h6>
+        </div>
+
+        <hr>
+
+        <div class="row"  style='padding-top:15px'>
+          <div class="table-responsive">
+            <h6 class="text ls-1 mb-1">Documents</h6>
+
+            <table class="table align-items-center table-flush" id="document_table">
+              <thead class="thead-light"></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer py-4">
+
+      <div class='row'>
+        <div class='col' align='left'> </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="category_form_modal" class="modal">
+  <div class="card shadow">
+    <div class="card-header bg-transparent">
+      <div class="row align-items-center">
+        <div class="col">
+          <h6 class="text-uppercase ls-1 mb-1">Event</h6>
+          <h2 class="mb-0" >Add Category</h2>
+        </div>
+
+        <div class="col" align='right' style='max-width:100px'>
+          <button type="button"
+                  onclick="document.getElementById('category_form_modal').style.display='None'"
+                  class="btn btn-round btn-danger btn-icon no-caret">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col">
+            <form action="" method="post" class="form" id='category_form' >
+              {% csrf_token %}
+              {% bootstrap_form category_form layout='horizontal' %}
+            </form>
+          </div>
+
+          <div class="col">
+            <div class="row">
+                <div class="col" style='width:18px; max-width:18px'>
+                  <span class="badge badge-pill badge-success"
+                        onclick="category_form_class.add_element()">
+                    <i class="fa fa-plus"></i>
+                  </span>
+                </div>
+                <div class="col">
+                  <h6 class="text-uppercase ls-1 mb-1">Element</h6>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" id='category_form_elements'>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer py-4">
+
+      <div class='row'>
+        <div class='col' align='left'>
+          <a onclick="category_form_class.delete()">
+            <div class="btn btn-round btn-danger btn-icon no-caret">
+              <i class="fa fa-trash-alt"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class='col' align='right'>
+          <a onclick="category_form_class.push()">
+            <div class="btn btn-round btn-success no-caret">
+              <i class="fas fa-sign-in-alt" style='padding-right:10px;'></i> Submit
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="element_form_modal" class="modal">
+  <div class="card shadow">
+    <div class="card-header bg-transparent">
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- <h6 class="text-uppercase ls-1 mb-1">Event</h6> -->
+          <h2 class="mb-0" >Add Element</h2>
+        </div>
+
+        <div class="col" align='right' style='max-width:100px'>
+          <button type="button"
+                  onclick="document.getElementById('element_form_modal').style.display='None'"
+                  class="btn btn-round btn-danger btn-icon no-caret">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col">
+            <form action="" method="post" class="form" id='element_form' >
+              {% csrf_token %}
+              {% bootstrap_form element_form layout='horizontal' %}
+            </form>
+          </div>
+
+          <div class="col">
+            <div class="row">
+                <div class="col" style='width:18px; max-width:18px'>
+                  <span class="badge badge-pill badge-success"
+                        onclick="element_form_class.add_document()">
+                    <i class="fa fa-plus"></i>
+                  </span>
+                </div>
+                <div class="col">
+                  <h6 class="text-uppercase ls-1 mb-1">Documents</h6>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" id='element_form_documents'>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer py-4">
+
+      <div class='row'>
+        <div class='col' align='left'>
+          <a onclick="element_form_class.delete()">
+            <div class="btn btn-round btn-danger btn-icon no-caret">
+              <i class="fa fa-trash-alt"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class='col' align='right'>
+          <a onclick="element_form_class.push()">
+            <div class="btn btn-round btn-success no-caret">
+              <i class="fas fa-sign-in-alt" style='padding-right:10px;'></i> Submit
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="document_form_modal" class="modal">
+  <div class="card shadow">
+    <div class="card-header bg-transparent">
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- <h6 class="text-uppercase ls-1 mb-1">Event</h6> -->
+          <h2 class="mb-0" >Add Document</h2>
+        </div>
+
+        <div class="col" align='right' style='max-width:100px'>
+          <button type="button"
+                  onclick="document.getElementById('document_form_modal').style.display='None'"
+                  class="btn btn-round btn-danger btn-icon no-caret">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col">
+            <form action="" method="post" class="form" id='document_form' >
+              {% csrf_token %}
+              {% bootstrap_form document_form layout='horizontal' %}
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer py-4">
+
+      <div class='row'>
+        <div class='col' align='left'>
+          <a onclick="document_form_class.delete()">
+            <div class="btn btn-round btn-danger btn-icon no-caret">
+              <i class="fa fa-trash-alt"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class='col' align='right'>
+          <a onclick="document_form_class.push()">
+            <div class="btn btn-round btn-success no-caret">
+              <i class="fas fa-sign-in-alt" style='padding-right:10px;'></i> Submit
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
 
 {% endblock %}

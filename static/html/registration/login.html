@@ -23,6 +23,14 @@
         </div>
 
         <div class="card-body ">
+          <!-- <a href="{{signin_url}}" role="button" id="connect-button">
+            <div class="icon bg-white text-blue rounded-circle">
+              <i class="ti-microsoft"></i>
+            </div>
+            <div class="text-blue">
+              Office365
+            </div>
+          </a> -->
 
           <form action="{% url 'auth:login' %}" method="post" class="form">
               {% csrf_token %}

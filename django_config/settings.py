@@ -43,10 +43,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'bootstrap3',
     'registration',
 
+
     'doc',
+    'office365',
 )
 
 
@@ -60,17 +63,19 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'django_config.urls'
 
 if platform.node() == 'az84cqc01':
-    LOGIN_REDIRECT_URL = '/excursion/excursions/excursions'
-    LOGOUT_REDIRECT_URL = '/excursion/excursions/excursions'
+    LOGIN_REDIRECT_URL = '/tpe_toolkit/'
+    LOGOUT_REDIRECT_URL = '/tpe_toolkit/'
 
 else :
-    LOGIN_REDIRECT_URL = '/excursions/excursions'
-    LOGOUT_REDIRECT_URL = '/excursions/excursions'
+    LOGIN_REDIRECT_URL = '/'
+    LOGOUT_REDIRECT_URL = '/'
 
 
 TEMPLATES = [
@@ -84,6 +89,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -102,6 +110,35 @@ DATABASES = {
     }
 }
 
+
+
+#install social auth pip install social-auth-app-django
+#https://fosstack.com/how-to-add-google-authentication-in-django/
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY  = '272448904965-lg70vakdq457btb1o3a1hjhbpdu1mpjf.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET  = 'bQJvx1awfUQiorsJ3jBcv2--'
+
+# SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_KEY = '050ceeba-818d-49f9-9abf-b0c246721310'
+# SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_SECRET = 'wyNSD07wghkbNING828]|]$'
+
+SOCIAL_AUTH_AZUREAD_OAUTH2_KEY = 'af21624b-1a3d-4749-8325-8e877a3aaddd'
+SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET = 'tYjeEpqVureH/bzCwIU6NSqaDP4qpwO930NDuw2hen8='
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
+
+
+AUTHENTICATION_BACKENDS = (
+ 'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+ 'social_core.backends.google.GoogleOpenId',  # for Google authentication
+ 'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+ 'social_core.backends.github.GithubOAuth2',  # for Github authentication
+ 'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
+ 'social_core.backends.azuread.AzureADOAuth2',  # for Microsoft authentication
+ 'social_core.backends.azuread_tenant.AzureADTenantOAuth2',  # for Microsoft authentication
+
+ 'django.contrib.auth.backends.ModelBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

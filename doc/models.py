@@ -58,13 +58,15 @@ class DocumentType( models.Model ):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=2000, blank=True, null=True)
 
+    def __str__(self):
+        return self.name
 
 class Document(models.Model):
 
     element = models.ForeignKey(Element)
     type = models.ForeignKey(DocumentType, on_delete=models.CASCADE)
 
-    date = models.DateTimeField('date published', null=True, blank=True)
+    date = models.DateTimeField('date published', auto_now=True, null=True, blank=True)
     author = models.ForeignKey( settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
                                 null=True, blank=True)
 

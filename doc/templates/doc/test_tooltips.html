@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="{% static 'css/tooltips.css' %}"> -->
+
+{% endblock %}
+
+
+{% block javascript %}
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="container">
+  <h3>Tooltip Example</h3>
+  <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+</div>
+
+
+
+
+
+<div class="panel-header panel-header-sm">
+</div>
+
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-chart">
+
+<button type="button" class="btn btn-sm btn-white" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
+<button type="button" class="btn btn-sm btn-white" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+  Tooltip on right
+</button>
+<button type="button" class="btn btn-sm btn-white" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+  Tooltip on bottom
+</button>
+<button type="button" class="btn btn-sm btn-white" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+  Tooltip on left
+</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+  Tooltip on right
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+  Tooltip on bottom
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+  Tooltip on left
+</button>
+{% endblock %}

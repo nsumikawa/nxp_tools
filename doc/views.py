@@ -6,8 +6,20 @@ from django.core.urlresolvers import reverse
 
 # Create your views here.
 
+import models as models
+import forms as forms
 # from .models import Directory, Document, DirectoryTree, FAQ
 
+
+
+def test( request ) :
+    """ Development html interface """
+
+    context = { 'category_form': forms.CategoryForm(),
+                'document_form': forms.DocumentForm(),
+                'element_form': forms.ElementForm(),
+                }
+    return render(request, 'doc/test.html', context )
 
 # def training_doc(request, dir_id=None):
 #
@@ -50,18 +62,6 @@ from django.core.urlresolvers import reverse
 #     return render(request, 'training/training_doc.html', context)
 #
 
-def test( request ) :
-    """ returns a list of most recently added documents """
-    #
-    # from itertools import chain
-    #
-    # new_doc = Document.objects.order_by('-date')[:10]
-    # new_faq = FAQ.objects.order_by('-date')[:10]
-    #
-    # context = {'page_type':'BOTH'}
-    # context['documents'] = list(chain(new_doc, new_faq))
-
-    return render(request, 'doc/test.html', {} )
 
 # def new_documents( request ) :
 #     """ returns a list of most recently added documents """

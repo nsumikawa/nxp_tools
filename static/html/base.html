@@ -6,15 +6,6 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133349311-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-133349311-1');
-  </script>
 
 
   <meta charset="utf-8">
@@ -39,7 +30,7 @@
   <link rel="stylesheet" href="{% static 'plugins/now_ui/assets/css/now-ui-dashboard.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/now_ui/assets/demo/demo.css' %}">
 
-  <link rel="stylesheet" href="{% static 'css/my_css.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/my_css.css' %}"> -->
 
   {% block css %}{% endblock %}
 
@@ -60,25 +51,72 @@
           <!-- COS -->
         </a>
         <a href="" class="simple-text logo-normal">
-          Anomaly Detection
+          TPE Toolkit
         </a>
       </div>
 
       <div class="sidebar-wrapper">
+
         <ul class="nav">
-          <li id='sidebar_events_hotspots'>
-            <a href="{% url 'doc:test' %}">
-              <i class="fas fa-pepper-hot"></i>
-              <p>Hotspot</p>
+          <h6 class="simple-text logo-normal" style=" padding-left:80px;
+                                                      padding-top:5vh;
+                                                      color:#FFFFFF;
+                                                      text-transform: uppercase">
+            Training
+          </h6>
+          <hr style=" margin-left: 20px;
+                      margin-right: 20px;
+                      background-color:#f8f9fa;
+                      border-width: 1px;">
+
+
+          <li id='sidebar_Exensio_Yield_Training'>
+            <a onclick="main_page_class.open('Exensio Yield', 'Training')">
+              <i class="fas fa-spinner"></i>
+              <p>Exensio Yield</p>
+            </a>
+          </li>
+
+          <li id='sidebar_Optimal_Training'>
+            <a onclick="main_page_class.open('Optimal+', 'Training')">
+              <i class="fas fa-spinner"></i>
+              <p>Optimal+</p>
             </a>
           </li>
 
 
 
+          <h6 class="simple-text logo-normal" style=" padding-left:70px;
+                                                      padding-top:5vh;
+                                                      color:#FFFFFF;
+                                                      text-transform: uppercase">
+            Templates
+          </h6>
+          <hr style=" margin-left: 20px;
+                      margin-right: 20px;
+                      background-color:#f8f9fa;
+                      border-width: 1px;">
+
+          <li id='sidebar_Exensio_Yield_Template'>
+            <a onclick="main_page_class.open('Exensio Yield', 'Template')">
+              <i class="fas fa-spinner"></i>
+              <p>Exensio Yield</p>
+            </a>
+          </li>
+
+          <li id='sidebar_Optimal_Template'>
+            <a onclick="main_page_class.open('Optimal+', 'Template')">
+              <i class="fas fa-spinner"></i>
+              <p>Optimal+</p>
+            </a>
+          </li>
           {% if user.is_superuser %}
           {% endif %}
         </ul>
       </div>
+
+
+
     </div>
 
 
@@ -196,18 +234,31 @@
 
 
   <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/core/popper.min.js' %}"></script>
+  <!-- <script src="{% static 'js/core/popper.min.js' %}"></script> -->
   <!-- <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+  <script src="{% static 'plugins/now_ui/assets/js/core/popper.min.js' %}"></script>
   <script src="{% static 'plugins/bootstrap-4.2.1/js/bootstrap.min.js' %}"></script>
 
-  <!-- <script src="{% static 'plugins/now_ui/assets/js/core/popper.min.js' %}"></script> -->
   <script src="{% static 'plugins/now_ui/assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
   <script src="{% static 'plugins/now_ui/assets/js/plugins/chartjs.min.js' %}"></script>
   <script src="{% static 'plugins/now_ui/assets/js/plugins/bootstrap-notify.js' %}"></script>
   <script src="{% static 'plugins/now_ui/assets/js/now-ui-dashboard.min.js' %}"></script>
   <script src="{% static 'plugins/sweetalert/dist/sweetalert2.all.min.js' %}"></script>
-  <script src="{% static 'js/excursion_detection/utils.js' %}"></script>
-  <script src="{% static 'js/excursion_detection/excursions/views/excursions.js' %}"></script>
+  <!-- <script src="{% static 'js/excursion_detection/utils.js' %}"></script>
+  <script src="{% static 'js/excursion_detection/excursions/views/excursions.js' %}"></script> -->
+
+
+  <script src="{% static 'js/nxp_tools/utils.js' %}"></script>
+  <script src="{% static 'js/nxp_tools/category_form.js' %}"></script>
+  <script src="{% static 'js/nxp_tools/document_form.js' %}"></script>
+  <script src="{% static 'js/nxp_tools/element_form.js' %}"></script>
+  <script src="{% static 'js/nxp_tools/element_modal.js' %}"></script>
+  <script src="{% static 'js/nxp_tools/main.js' %}"></script>
+
+  <script>
+    main_page_class = new main_page('{{user.is_superuser}}')
+  </script>
+
   {% block javascript %}{% endblock %}
 
 </body>
