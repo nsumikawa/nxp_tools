@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     url(r'^', include('doc.urls', namespace="doc")),
-    url(r'^office365/', include('office365.urls', namespace="office365")),
+    # url(r'^office365/', include('office365.urls', namespace="office365")),
 
     url(r'^admin/', admin.site.urls),
     url(r'^auth/', include('social_django.urls', namespace='social')),
