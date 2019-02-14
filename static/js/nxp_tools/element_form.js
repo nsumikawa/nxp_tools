@@ -184,7 +184,6 @@ class element_form {
                     `
       }
 
-      console.log( _markup )
       document.getElementById(this.document_div).innerHTML += _markup
     }
   }
@@ -235,7 +234,6 @@ class element_html {
     //adds a single item to the parent
 
     if(element == 'None'){ element = `body_${category_id}`}
-    console.log( 'element id ' + element)
     document.getElementById(element).innerHTML += this.markup( id, name, description, markup_element )
 
   }

@@ -21,8 +21,13 @@ class main_page{
     this.user_status = user_status
 
     //default the toolkit to point to Exensio Yield Training Documents
-    localStorage.setItem("page_tool", 'Exensio Yield');
-    localStorage.setItem("page_type", 'Training');
+    if( localStorage.getItem("page_tool") == null ){
+      localStorage.setItem("page_tool", 'Exensio Yield');
+    }
+
+    if( localStorage.getItem("page_type") == null ){
+      localStorage.setItem("page_type", 'Training');
+    }
 
     this.init_page();
   }
@@ -77,6 +82,12 @@ class main_page{
   }
 
   open( tool, type ){
+
+    if( window.location.pathname == url_prefix() + '/accounts/login/' ){
+      localStorage.setItem("page_tool", tool);
+      localStorage.setItem("page_type", type);
+      window.location.href = window.location.origin + url_prefix()
+    }
 
     //remove the active label on the sidebar
     $(`#sidebar_${this.tool.replace(' ', '_').replace('+','')}_${this.type}`).removeClass()
