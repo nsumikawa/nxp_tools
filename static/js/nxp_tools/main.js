@@ -29,7 +29,6 @@ class main_page{
       localStorage.setItem("page_type", 'Training');
     }
 
-    this.init_page();
   }
 
   init_page(){
@@ -87,15 +86,18 @@ class main_page{
       localStorage.setItem("page_tool", tool);
       localStorage.setItem("page_type", type);
       window.location.href = window.location.origin + url_prefix()
+
+    }else{
+
+      //remove the active label on the sidebar
+      $(`#sidebar_${this.tool.replace(' ', '_').replace('+','')}_${this.type}`).removeClass()
+
+      localStorage.setItem("page_tool", tool);
+      localStorage.setItem("page_type", type);
+
+      //initializes the page to the tool/type
+      this.init_page()
     }
 
-    //remove the active label on the sidebar
-    $(`#sidebar_${this.tool.replace(' ', '_').replace('+','')}_${this.type}`).removeClass()
-
-    localStorage.setItem("page_tool", tool);
-    localStorage.setItem("page_type", type);
-
-    //initializes the page to the tool/type
-    this.init_page()
   }
 }

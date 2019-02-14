@@ -25,7 +25,6 @@ class category_form {
   }
 
   new(){
-    //clears the contents of the html form
 
     //clear the category id
     this.category_id = 'None'
@@ -37,7 +36,7 @@ class category_form {
     this.form.elements.description.value = ''
 
     //hide the elements block as there will be no previously existing elements
-    document.getElementById(this.elements_div).style.display='None'
+    document.getElementById(this.elements_div + '_container').style.display='none'
 
     document.getElementById(this.modal).style.display='Block'
   }
@@ -52,6 +51,8 @@ class category_form {
         value: this.category_id
     }).appendTo( '#' + this.form_name );
 
+    var self = this;
+
     //ajax request to push content to the database.
     $.ajax({
         type: $( '#' + this.form_name ).attr('method'),
@@ -60,9 +61,20 @@ class category_form {
         success: function (data) {
             //update the current page on return
 
-            // $('#category_' + data.id ).remove()
-            category_html_class.replace( data.id, data.name, data.description )
+            if( self.category_id == 'None' ){
+              // add a new entry when one does not exist
+              category_html_class.add( data.id, data.name, data.description )
 
+            } else {
+              //replace the existing contents
+              category_html_class.replace( data.id, data.name, data.description )
+            }
+            // $('#category_' + data.id ).remove()
+
+            // $('#id_goal').append( $("<option></option>")
+            //                       .attr("value",key)
+            //                       .text(form_field[key]));
+            //
             document.getElementById(category_form_class.modal).style.display='None'
         },
         error: function(data) {
@@ -90,6 +102,9 @@ class category_form {
             category_form_class.form.elements.tool.value = data.tool
             category_form_class.form.elements.name.value = data.name
             category_form_class.form.elements.description.value = data.description
+
+            //hide the elements block as there will be no previously existing elements
+            document.getElementById(category_form_class.elements_div + '_container').style.display='Block'
 
             //clear the div then add elements to it belonging to the category
             document.getElementById(category_form_class.elements_div).innerHTML = ""

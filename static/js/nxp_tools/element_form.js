@@ -37,6 +37,7 @@ class element_form {
     this.form.elements.name.value = ''
     this.form.elements.description.value = ''
 
+    document.getElementById(this.document_div + '_container').style.display='None'
     document.getElementById(this.modal).style.display='Block'
   }
 
@@ -94,6 +95,8 @@ class element_form {
             element_form_class.form.elements.category.value = data.category
             element_form_class.form.elements.name.value = data.name
             element_form_class.form.elements.description.value = data.description
+
+            document.getElementById(element_form_class.document_div + '_container').style.display='Block'
 
             //clear the div then add elements to it belonging to the category
             document.getElementById(element_form_class.document_div).innerHTML = ""
