@@ -15,7 +15,7 @@ function url_prefix(){
 
   //determine the url location based on the window origin
   if ( window.location.origin == 'http://az84cqc01' ){
-    return '/excursion'
+    return '/nxp_tools'
 
   }else{
     return ''
