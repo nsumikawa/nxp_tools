@@ -114,14 +114,14 @@ DATABASES = {
 
 #install social auth pip install social-auth-app-django
 #https://fosstack.com/how-to-add-google-authentication-in-django/
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY  = '272448904965-lg70vakdq457btb1o3a1hjhbpdu1mpjf.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET  = 'bQJvx1awfUQiorsJ3jBcv2--'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY  = '272448904965-lg70vakdq457btb1o3a1hjhbpdu1mpjf.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET  = 'bQJvx1awfUQiorsJ3jBcv2--'
 
 # SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_KEY = '050ceeba-818d-49f9-9abf-b0c246721310'
 # SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_SECRET = 'wyNSD07wghkbNING828]|]$'
 
-SOCIAL_AUTH_AZUREAD_OAUTH2_KEY = 'af21624b-1a3d-4749-8325-8e877a3aaddd'
-SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET = 'tYjeEpqVureH/bzCwIU6NSqaDP4qpwO930NDuw2hen8='
+# SOCIAL_AUTH_AZUREAD_OAUTH2_KEY = 'af21624b-1a3d-4749-8325-8e877a3aaddd'
+# SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET = 'tYjeEpqVureH/bzCwIU6NSqaDP4qpwO930NDuw2hen8='
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
@@ -134,8 +134,8 @@ AUTHENTICATION_BACKENDS = (
  'social_core.backends.google.GoogleOAuth2',  # for Google authentication
  'social_core.backends.github.GithubOAuth2',  # for Github authentication
  'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
- 'social_core.backends.azuread.AzureADOAuth2',  # for Microsoft authentication
- 'social_core.backends.azuread_tenant.AzureADTenantOAuth2',  # for Microsoft authentication
+ # 'social_core.backends.azuread.AzureADOAuth2',  # for Microsoft authentication
+ # 'social_core.backends.azuread_tenant.AzureADTenantOAuth2',  # for Microsoft authentication
 
  'django.contrib.auth.backends.ModelBackend',
 )
