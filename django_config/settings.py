@@ -43,10 +43,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
     'bootstrap3',
     'registration',
 
+    # 'social_django',
 
     'doc',
     # 'office365',
@@ -64,7 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 
-    'social_django.middleware.SocialAuthExceptionMiddleware',
+    # 'social_django.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'django_config.urls'
@@ -84,8 +84,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
+                # 'social_django.context_processors.backends',
+                # 'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -132,17 +132,17 @@ else :
     LOGIN_REDIRECT_URL = '/'
 
 
-AUTHENTICATION_BACKENDS = (
- 'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
- 'social_core.backends.google.GoogleOpenId',  # for Google authentication
- 'social_core.backends.google.GoogleOAuth2',  # for Google authentication
- 'social_core.backends.github.GithubOAuth2',  # for Github authentication
- 'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
- # 'social_core.backends.azuread.AzureADOAuth2',  # for Microsoft authentication
- # 'social_core.backends.azuread_tenant.AzureADTenantOAuth2',  # for Microsoft authentication
-
- 'django.contrib.auth.backends.ModelBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+#  'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+#  'social_core.backends.google.GoogleOpenId',  # for Google authentication
+#  'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+#  'social_core.backends.github.GithubOAuth2',  # for Github authentication
+#  'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
+#  # 'social_core.backends.azuread.AzureADOAuth2',  # for Microsoft authentication
+#  # 'social_core.backends.azuread_tenant.AzureADTenantOAuth2',  # for Microsoft authentication
+#
+#  'django.contrib.auth.backends.ModelBackend',
+# )
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
