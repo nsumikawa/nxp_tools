@@ -94,8 +94,8 @@ class element_modal_html {
 
   _image_markup( type ){
     if( type == 'Video' ){ return '<i class="fas fa-video" style="padding-right:8px"></i> Video' }
-    if( type == 'Powerpoint' ){ return '<i class="fas fa-file-powerpoint" style="padding-right:10px"></i> PDF' }
-    if( type == 'PDF' ){ return '<i class="fas fa-file-pdf" style="padding-right:10px"></i> PPTx' }
+    if( type == 'Powerpoint' ){ return '<i class="fas fa-file-pdf" style="padding-right:10px"></i> PPTx' }
+    if( type == 'PDF' ){ return '<i class="fas fa-file-powerpoint" style="padding-right:10px"></i> PDF' }
     if( type == 'Link' ){ return '<i class="fas fa-link" style="padding-right:10px"></i> Link' }
     if( type == 'Template' ){ return '<i class="fas fa-file-download" style="padding-right:10px"></i> Template' }
     return ''
