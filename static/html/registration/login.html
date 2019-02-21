@@ -2,6 +2,20 @@
 {% load bootstrap3 %}
 
 
+
+{% block javascript %}
+
+
+<script>
+
+function registration(){
+  document.location.href = url_prefix() + "/accounts/register"
+}
+</script>
+{% endblock %}
+
+
+
 {% block content %}
 
 <div class="panel-header panel-header-sm">
@@ -44,10 +58,13 @@
           </form>
 
           <hr>
-          <div class="col-6 text-left">
-            <a href="/accounts/register" >
-              <small>Create new account</small>
-            </a>
+          <div class="text-left">
+            <span class="badge badge-pill badge-primary"
+                  onclick="registration()">
+              <i class="fa fa-registered" style='padding-right:10px'></i>
+              Create new account
+            </span>
+
           </div>
         </div>
 
