@@ -42,7 +42,7 @@ class DocumentAdmin(admin.ModelAdmin):
 
 class ViewAdmin(admin.ModelAdmin):
     model = View
-    list_display = ('date',)
+    list_display = ('date','Document')
     list_filter = ['date']
     search_fields = ['date']
 

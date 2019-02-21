@@ -41,9 +41,10 @@ def push( request ) :
         context = { 'id': obj.id,
                     'element_id' : obj.element.id,
                     'name': obj.name,
-                    'type': obj.type.id,
+                    'type': obj.type.name,
                     'link': obj.link,
                     'date': obj.date,
+                    'author' : obj.author.username,
                     'error_flag' : False}
 
     else : context = {'error_flag' : True}
@@ -61,7 +62,7 @@ def pull( request ) :
 
     if idx == 'None' : return JsonResponse({'error_flag':True})
 
-    obj = models.Document.objects.get( id=int(idx) )
+    obj = models.Document.objects.get( id=int(idx), show=True )
 
     context = { 'id' : idx,
                 'name': obj.name,
@@ -86,8 +87,9 @@ def delete( request ) :
 
     if idx == 'None' : return JsonResponse({'error_flag':True})
 
-    category_obj = models.Document( id=int(idx) )
-    category_obj.delete()
+    obj = models.Document.objects.get( id=int(idx) )
+    obj.show = False
+    obj.save()
 
     context = { 'id' : idx,
                 'error_flag' : False}
@@ -96,7 +98,23 @@ def delete( request ) :
     return JsonResponse(context)
 
 
+def view( request ) :
+    """ pulls the content from the django database """
 
+    log = logging.getLogger(__name__)
+
+    log.debug( 'pulls the database content for an entry' )
+
+    idx = request.GET.get('id', 'None')
+
+    if idx == 'None' : return JsonResponse({'error_flag':True})
+
+    doc_obj = models.Document.objects.get( id=int(idx) )
+
+    view_obj = models.View( Document=doc_obj )
+    view_obj.save()
+
+    return JsonResponse({})
 
 
 
@@ -104,4 +122,5 @@ urlpatterns = [
     url(r'^ajax/views/document/push$', push, name='doc_document_push'),
     url(r'^ajax/views/document/pull$', pull, name='doc_document_pull'),
     url(r'^ajax/views/document/delete$', delete, name='doc_document_delete'),
+    url(r'^ajax/views/document/view$', view, name='doc_document_view'),
 ]

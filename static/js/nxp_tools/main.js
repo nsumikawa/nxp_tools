@@ -18,7 +18,9 @@ class main_page{
 
   constructor( user_status ){
 
-    this.user_status = user_status
+    if( typeof user_status === 'string' ){
+      this.user_status = (user_status === 'true');
+    }else { this.user_status = user_status }
 
     //default the toolkit to point to Exensio Yield Training Documents
     if( localStorage.getItem("page_tool") == null ){
@@ -46,6 +48,7 @@ class main_page{
     this.init_document_form();
     this.init_element_form();
     this.init_element_modal();
+    this.init_search_modal();
 
     category_html_class.page()
   }
@@ -66,7 +69,7 @@ class main_page{
     var e_document_div = 'element_form_documents';
     element_form_class = new element_form( 'element_form_modal', e_form, e_form_name, e_document_div );
     element_html_class = new element_html( this.tool, this.type, this.user_status );
-
+    document_html_class = new document_html( e_document_div )
   }
 
   init_document_form(){
@@ -77,7 +80,17 @@ class main_page{
   }
 
   init_element_modal(){
-    element_modal_html_class = new element_modal_html( 'element_modal', $('#document_table') )
+    var doc_table = $('#document_table')
+    var doc_div = 'document_div'
+    var temp_table = $('#template_table')
+    var temp_div = 'template_div'
+    element_modal_html_class = new element_modal_html( 'element_modal',  doc_table, doc_div,
+                                                        temp_table, temp_div );
+  }
+
+  init_search_modal(){
+    search_class.modal = 'search_modal'
+    search_class.table = $('#search_table')
   }
 
   open( tool, type ){

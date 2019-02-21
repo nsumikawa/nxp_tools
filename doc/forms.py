@@ -60,10 +60,8 @@ class ElementForm(ModelForm):
 class DocumentForm(ModelForm):
     class Meta:
         model = models.Document
-        fields = ['element', 'type', 'link']
-        widgets = {
-            'description': Textarea(attrs={'cols': 40, 'rows': 15}),
-            }
+        fields = ['element', 'type', 'name', 'link']
+        widgets = { }
 
     def save( self, request, idx ) :
         """ saves the model to the database """
@@ -72,10 +70,12 @@ class DocumentForm(ModelForm):
             obj = models.Document.objects.get( id = idx )
             obj.element = self.cleaned_data['element']
             obj.type = self.cleaned_data['type']
+            obj.name = self.cleaned_data['name']
 
         else :
             obj = models.Document.objects.get_or_create(element = self.cleaned_data['element'],
                                                         type = self.cleaned_data['type'],
+                                                        name = self.cleaned_data['name'],
                                                         author = request.user )[0]
 
         obj.link = self.cleaned_data['link']

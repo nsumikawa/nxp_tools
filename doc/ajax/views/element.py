@@ -51,6 +51,8 @@ def push( request ) :
 def pull( request ) :
     """ pulls the content from the django database """
 
+    from django.db.models import Q
+
     log = logging.getLogger(__name__)
 
     log.debug( 'pulls the database content for an entry' )
@@ -60,7 +62,11 @@ def pull( request ) :
     if idx == 'None' : return JsonResponse({'error_flag':True})
 
     obj = models.Element.objects.get( id=int(idx) )
-    document_objects = models.Document.objects.filter(element=obj)
+    document_objects = models.Document.objects.filter(element=obj, show=True)
+
+    #separate the link and template objects
+    template_objects = document_objects.filter(Q(type__name = 'Link')|Q(type__name = 'Template'))
+    document_objects = document_objects.exclude(Q(type__name = 'Link')|Q(type__name = 'Template'))
 
     context = { 'id' : idx,
                 'name': obj.name,
@@ -70,10 +76,18 @@ def pull( request ) :
                                                                 'type__name',
                                                                 'author__username',
                                                                 'link',
-                                                                'date')),
+                                                                'date',
+                                                                'name')),
+
+                'template' : list(template_objects.values_list( 'id',
+                                                                'type__name',
+                                                                'author__username',
+                                                                'link',
+                                                                'date',
+                                                                'name')),
                 'error_flag' : False}
 
-    print context
+    # print context
     return JsonResponse(context)
 
 
@@ -88,8 +102,9 @@ def delete( request ) :
 
     if idx == 'None' : return JsonResponse({'error_flag':True})
 
-    category_obj = models.Element( id=int(idx) )
-    category_obj.delete()
+    obj = models.Element.objects.get( id=int(idx) )
+    obj.show = False
+    obj.save()
 
     context = { 'id' : idx,
                 'error_flag' : False}
@@ -116,7 +131,8 @@ def get( request ) :
     type_obj = models.Type.objects.get( name=type )
 
     element_objects = models.Element.objects.filter(category__tool__name=tool_obj,
-                                                    category__type__name=type_obj)
+                                                    category__type__name=type_obj,
+                                                    show=True)
 
     # element_objects = category_objects.element_set
     context = { 'elements' : list(element_objects.values_list(  'category__id',

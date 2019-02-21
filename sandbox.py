@@ -24,6 +24,8 @@ if __name__ == "__main__":
     pptx = models.DocumentType.objects.get_or_create( name='Powerpoint')[0]
     video = models.DocumentType.objects.get_or_create( name='Video')[0]
     models.DocumentType.objects.get_or_create( name='PDF')
+    models.DocumentType.objects.get_or_create( name='Link')
+    models.DocumentType.objects.get_or_create( name='Template')
 
 
     tool = models.Tool.objects.get_or_create( name='Exensio Yield')[0]
@@ -51,10 +53,12 @@ if __name__ == "__main__":
                                                         description=value[2])[0]
         if value[3] != 'NONE' :
             models.Document.objects.get_or_create(  element=element,
+                                                    name=value[1],
                                                     type = pptx,
                                                     link=value[3])[0]
 
         if value[4] != 'NONE' :
             models.Document.objects.get_or_create(  element=element,
+                                                    name=value[1],
                                                     type = video,
                                                     link=value[4])[0]

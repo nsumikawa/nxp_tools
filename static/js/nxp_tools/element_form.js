@@ -37,7 +37,8 @@ class element_form {
     this.form.elements.name.value = ''
     this.form.elements.description.value = ''
 
-    document.getElementById(this.document_div + '_container').style.display='None'
+    document_html_class.hide()
+    // document.getElementById(this.document_div + '_container').style.display='None'
     document.getElementById(this.modal).style.display='Block'
   }
 
@@ -96,11 +97,15 @@ class element_form {
             element_form_class.form.elements.name.value = data.name
             element_form_class.form.elements.description.value = data.description
 
-            document.getElementById(element_form_class.document_div + '_container').style.display='Block'
-
             //clear the div then add elements to it belonging to the category
-            document.getElementById(element_form_class.document_div).innerHTML = ""
-            element_form_class.populate_document_div( data.document );
+            document_html_class.clear()
+            document_html_class.add_multiple( data.document)
+            document_html_class.show()
+
+            // document.getElementById(element_form_class.document_div + '_container').style.display='Block'
+            // document.getElementById(element_form_class.document_div).innerHTML = ""
+            // element_form_class.populate_document_div( data.document );
+
 
             document.getElementById(element_form_class.modal).style.display='Block'
         },
@@ -115,7 +120,7 @@ class element_form {
   delete( ){
     // populates and shows the  modal with all events corresponding to the product
 
-    // $('#category_' + this.element_id ).remove()
+    $('#element_' + this.element_id ).remove()
 
     document.getElementById(element_form_class.modal).style.display='None'
 
@@ -138,57 +143,6 @@ class element_form {
   add_document( ){
     // opens the element modal to allwo for the addition of anew element
     document_form_class.new( this.element_id )
-  }
-
-  populate_document_div( data ){
-    // add elements to the element block in the category form
-
-    for (var i = 0; i < data.length; i++) {
-      var id = data[i][0];
-      var type = data[i][1];
-      var author = data[i][2]
-
-      if( type == 'Video' ){
-        var _markup = `
-                      <div class="col" align='left'>
-                        <span class="badge badge-pill badge-primary"
-                              onclick="document_form_class.pull(${id})">
-                              Video
-                              <i class="fa fa-edit" style="padding-left:10px"></i>
-                        </span>
-                        by ${author}
-                      </div>
-                      `
-      }
-
-      if( type == 'Powerpoint' ){
-        var _markup = `
-                      <div class="col" align='left'>
-                        <span class="badge badge-pill badge-warning"
-                              onclick="document_form_class.pull(${id})">
-                              PPTx
-                              <i class="fa fa-edit" style="padding-left:10px"></i>
-                        </span >
-                        by ${author}
-                    </div>
-                    `
-      }
-
-      if( type == 'PDF' ){
-        var _markup = `
-                      <div class="col" align='left'>
-                        <span class="badge badge-pill badge-danger"
-                              onclick="document_form_class.pull(${id})">
-                              PDF
-                              <i class="fa fa-edit" style="padding-left:10px"></i>
-                        </span>
-                        by ${author}
-                    </div>
-                    `
-      }
-
-      document.getElementById(this.document_div).innerHTML += _markup
-    }
   }
 
 
@@ -237,6 +191,10 @@ class element_html {
     //adds a single item to the parent
 
     if(element == 'None'){ element = `body_${category_id}`}
+
+    //do not add markup when the element does not exist
+    if( document.getElementById(element) == null){ return }
+
     document.getElementById(element).innerHTML += this.markup( id, name, description, markup_element )
 
   }
@@ -256,7 +214,7 @@ class element_html {
     // returns the markup for adding a button. this allows for controll based on user availability
 
     //do not return the edit button when the user is not signed in
-    if( this.user_status == 'False' ){ return '' }
+    if( this.user_status == false ){ return '' }
 
     return `
             <div class="col" style='width:18px; max-width:18px'>

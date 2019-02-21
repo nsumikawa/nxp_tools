@@ -37,6 +37,7 @@ class Category(models.Model):
 
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=2000, blank=True, null=True)
+    show = models.BooleanField( default=True )
 
     def __str__(self):
         return self.name
@@ -48,6 +49,7 @@ class Element(models.Model):
 
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=2000, blank=True, null=True)
+    show = models.BooleanField( default=True )
 
     def __str__(self):
         return self.name
@@ -72,6 +74,7 @@ class Document(models.Model):
 
     name = models.CharField(max_length=200)
     link = models.CharField(max_length=5000, blank=True, null=True)
+    show = models.BooleanField( default=True )
 
     def __str__(self):
         return self.name
@@ -80,7 +83,7 @@ class Document(models.Model):
 class View(models.Model):
 
     Document = models.ForeignKey(Document)
-    date = models.DateTimeField('date viewed')
+    date = models.DateTimeField('date viewed', auto_now=True)
 
 
 # class DirectoryTree(models.Model):

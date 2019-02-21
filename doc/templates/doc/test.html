@@ -41,30 +41,29 @@
 
 
 
-function initialize( tool, type, user_status ){
-
-  $('#top_navbar_brand').html( tool )
-  $('#main_title').html( type )
-
-  var c_form = document.forms.category_form;
-  var c_form_name = 'category_form'
-  var c_elements_div = 'category_form_elements'
-  category_form_class = new category_form( 'category_form_modal', c_form, c_form_name, c_elements_div )
-  category_html_class = new category_html( 'category_root', tool, type, user_status )
-
-  var e_form = document.forms.element_form;
-  var e_form_name = 'element_form'
-  var e_document_div = 'element_form_documents'
-  element_form_class = new element_form( 'element_form_modal', e_form, e_form_name, e_document_div )
-  element_html_class = new element_html( tool, type, user_status )
-
-  var d_form = document.forms.document_form;
-  var d_form_name = 'document_form'
-  document_form_class = new document_form( 'document_form_modal', d_form, d_form_name )
-
-  element_modal_html_class = new element_modal_html( 'element_modal', $('#document_table') )
-}
-
+// function initialize( tool, type, user_status ){
+//
+//   $('#top_navbar_brand').html( tool )
+//   $('#main_title').html( type )
+//
+//   var c_form = document.forms.category_form;
+//   var c_form_name = 'category_form'
+//   var c_elements_div = 'category_form_elements'
+//   category_form_class = new category_form( 'category_form_modal', c_form, c_form_name, c_elements_div )
+//   category_html_class = new category_html( 'category_root', tool, type, user_status )
+//
+//   var e_form = document.forms.element_form;
+//   var e_form_name = 'element_form'
+//   var e_document_div = 'element_form_documents'
+//   element_form_class = new element_form( 'element_form_modal', e_form, e_form_name, e_document_div )
+//   element_html_class = new element_html( tool, type, user_status )
+//
+//   var d_form = document.forms.document_form;
+//   var d_form_name = 'document_form'
+//   document_form_class = new document_form( 'document_form_modal', d_form, d_form_name )
+//
+//   element_modal_html_class = new element_modal_html( 'element_modal', $('#document_table') )
+// }
 
 
 
@@ -114,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
           <div class="row align-items-center">
             <div class="col">
               <!-- <h5 class="card-category">System Information</h5> -->
-              <h4 class="card-title" id='main_title'>Log</h4>
+              <h3 class="card-title" id='main_title'>Log</h3>
             </div>
 
-            {% if user.is_superuser %}
+            {% if user.is_authenticated %}
             <div class="col" align='right' style='max-width:200px; padding-right:30px''>
               <span class="badge badge-pill badge-success"
                     onclick="category_form_class.new()">
@@ -149,14 +148,70 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
+<div id="search_modal" class="modal">
+  <div class="card shadow">
+    <div class="card-header bg-transparent">
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- <h6 class="text-uppercase ls-1 mb-1">Event</h6> -->
+          <h3 class="card-title">Search Results</h3>
+        </div>
+
+
+        <div class="col" align='right' style='max-width:100px'>
+          <button type="button"
+                  onclick="document.getElementById('search_modal').style.display='None'"
+                  class="btn btn-round btn-danger btn-icon no-caret">
+            <i class="fa fa-times"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="modal-body">
+      <div class="card-body">
+
+        <div class="row" id='search_div'>
+          <div class="col">
+            <div class="table-responsive">
+              <h6 class="card-title">Relevant Items</h6>
+
+              <table class="table align-items-center table-flush" id="search_table">
+                <thead class="thead-light"></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-footer py-4">
+
+      <div class='row'>
+        <div class='col' align='left'> </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
 <div id="element_modal" class="modal">
   <div class="card shadow">
     <div class="card-header bg-transparent">
       <div class="row align-items-center">
         <div class="col">
           <!-- <h6 class="text-uppercase ls-1 mb-1">Event</h6> -->
-          <h2 class="text-uppercase mb-0" id='element_name'>Element</h2>
+          <h3 class="card-title" id='element_name'>Element</h3>
         </div>
+
 
         <div class="col" align='right' style='max-width:100px'>
           <button type="button"
@@ -170,29 +225,46 @@ document.addEventListener("DOMContentLoaded", function(event) {
       </div>
     </div>
 
-    <hr>
 
     <div class="modal-body">
       <div class="card-body">
+
         <div class="row">
-          <h5 class="text-uppercase ls-1 mb-1">Description</h5>
-        </div>
-        <div class="row">
-          <h6 class="text ls-1 mb-1" id='element_description'>Description</h6>
+          <div class="col">
+              <h5 class="card-title">Description</h5>
+              <h6 class="card-category" id='element_description'>Description</h6>
+          </div>
         </div>
 
         <hr>
 
-        <div class="row"  style='padding-top:15px'>
-          <div class="table-responsive">
-            <h6 class="text ls-1 mb-1">Documents</h6>
+        <div class="row"  style='padding-top:15px' id='template_div'>
+          <div class="col">
+            <div class="table-responsive">
+              <h5 class="card-title">Templates</h5>
 
-            <table class="table align-items-center table-flush" id="document_table">
-              <thead class="thead-light"></thead>
-              <tbody></tbody>
-            </table>
+              <table class="table align-items-center table-flush" id="template_table">
+                <thead class="thead-light"></thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
         </div>
+
+
+        <div class="row"  style='padding-top:15px' id='document_div'>
+          <div class="col">
+            <div class="table-responsive">
+              <h5 class="card-title">Documents</h5>
+
+              <table class="table align-items-center table-flush" id="document_table">
+                <thead class="thead-light"></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 

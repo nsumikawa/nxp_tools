@@ -118,9 +118,9 @@ DATABASES = {
 # SOCIAL_AUTH_AZUREAD_OAUTH2_KEY = 'af21624b-1a3d-4749-8325-8e877a3aaddd'
 # SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET = 'tYjeEpqVureH/bzCwIU6NSqaDP4qpwO930NDuw2hen8='
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_URL = 'login'
+# LOGOUT_URL = 'logout'
+# LOGIN_REDIRECT_URL = '/'
 
 if platform.node() == 'az84cqc01':
     LOGIN_REDIRECT_URL = '/nxp_tools/'

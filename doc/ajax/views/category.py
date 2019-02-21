@@ -36,7 +36,7 @@ def push( request ) :
 
     if form.is_valid():
         obj = form.save( idx )
-        
+
         context = { 'id' : obj.id,
                     'name': obj.name,
                     'description' : obj.description,
@@ -58,7 +58,7 @@ def pull( request ) :
     if idx == 'None' : return JsonResponse({'error_flag':True})
 
     obj = models.Category.objects.get( id=idx )
-    element_objects = models.Element.objects.filter( category=obj )
+    element_objects = models.Element.objects.filter( category=obj, show=True )
 
     context = { 'id' : idx,
                 'name': obj.name,
@@ -83,8 +83,10 @@ def delete( request ) :
 
     if idx == 'None' : return JsonResponse({'error_flag':True})
 
-    category_obj = models.Category( id=int(idx) )
-    category_obj.delete()
+    category_obj = models.Category.objects.get( id=int(idx) )
+    category_obj.show = False
+    category_obj.save()
+    # category_obj.delete()
 
     context = { 'id' : idx,
                 'error_flag' : False}
@@ -110,7 +112,7 @@ def get( request ) :
     tool_obj = models.Tool.objects.get( name=tool )
     type_obj = models.Type.objects.get( name=type )
 
-    category_objects = models.Category.objects.filter( tool=tool_obj, type=type_obj )
+    category_objects = models.Category.objects.filter( tool=tool_obj, type=type_obj, show=True )
 
     att_list = ['name', 'description']
 

@@ -240,7 +240,7 @@ class category_html {
     // returns the markup for adding a button. this allows for controll based on user availability
 
     var _markup = ''
-    if( this.user_status == 'True'){
+    if( this.user_status == true){
       _markup = `
                 <div class="col" align='right' style='max-width:100px'>
                       <span class="badge badge-pill badge-success"
@@ -263,10 +263,11 @@ class category_html {
                       <div class="card-header ">
                         <div class="row">
                           <div class="col">
-                            <h5 class="card-title" data-toggle="tooltip" data-placement="right" data-boundary=""
+                            <h6 class="card-category" data-toggle="tooltip" data-placement="right"
+                                data-boundary=""
                                 title="${description}" id='category_title_name_${id}'>
                                 ${name}
-                            </h5>
+                            </h6>
                           </div>
                           <div class="col" align='right' >
                             ${this.markup_add_button(id)}
