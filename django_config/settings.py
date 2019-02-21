@@ -120,17 +120,14 @@ DATABASES = {
 
 # LOGIN_URL = 'login'
 # LOGOUT_URL = 'logout'
-# LOGIN_REDIRECT_URL = '/'
 
 if platform.node() == 'az84cqc01':
     LOGIN_REDIRECT_URL = '/nxp_tools/'
     LOGOUT_REDIRECT_URL = '/nxp_tools/'
-    LOGIN_REDIRECT_URL = '/nxp_tools/'
 
 else :
     LOGIN_REDIRECT_URL = '/'
     LOGOUT_REDIRECT_URL = '/'
-    LOGIN_REDIRECT_URL = '/'
 
 
 AUTHENTICATION_BACKENDS = (

@@ -118,9 +118,30 @@ def get( request ) :
 
     context = { 'categories' : list(category_objects.values_list('id', 'name', 'description')) }
 
-    print context
     return JsonResponse(context)
 
+
+def get_page_info( request ):
+    """ returns the tool and type id """
+
+    log = logging.getLogger(__name__)
+
+    tool = request.GET.get('tool', 'None')
+    type = request.GET.get('type', 'None')
+
+    log.debug( 'retrieve the page info : %s : %s' % (tool, type) )
+
+    if tool == 'None' or type == 'None' : return JsonResponse({'error_flag':True})
+
+    tool_obj = models.Tool.objects.get( name=tool )
+    type_obj = models.Type.objects.get( name=type )
+
+    context = { 'error_flag':True,
+                'tool': tool_obj.id,
+                'type': type_obj.id,
+                }
+
+    return JsonResponse(context)
 
 
 urlpatterns = [
@@ -128,4 +149,5 @@ urlpatterns = [
     url(r'^ajax/views/category/pull$', pull, name='doc_category_pull'),
     url(r'^ajax/views/category/delete$', delete, name='doc_category_delete'),
     url(r'^ajax/views/category/get$', get, name='doc_category_get'),
+    url(r'^ajax/views/category/get_page_info$', get_page_info, name='doc_category_get_page_info'),
 ]

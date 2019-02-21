@@ -64,6 +64,12 @@ class element_form {
 
             if( self.element_id == 'None' ){
               element_html_class.add( data.category_id, data.id, data.name, data.description )
+
+              //append the element in document form
+              $('#id_element').append( $("<option></option>")
+                                      .attr("value", data.id)
+                                      .text(data.name));
+
             } else {
               element_html_class.replace( data.id, data.name, data.description )
             }
@@ -100,6 +106,7 @@ class element_form {
             //clear the div then add elements to it belonging to the category
             document_html_class.clear()
             document_html_class.add_multiple( data.document)
+            document_html_class.add_multiple( data.template)
             document_html_class.show()
 
             // document.getElementById(element_form_class.document_div + '_container').style.display='Block'

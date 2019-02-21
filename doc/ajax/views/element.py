@@ -34,7 +34,7 @@ def push( request ) :
     idx = request.POST.get('id', 'None')
 
     form = forms.ElementForm(request.POST)
-
+    
     if form.is_valid():
         obj = form.save( idx )
 

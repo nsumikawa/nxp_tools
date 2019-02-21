@@ -60,9 +60,9 @@ class document_form {
             //update the current page on return
 
             if( self.document_id == 'None' ){
-              document_html_class.add( data.id, data.type, data.author, data.name )
+              document_html_class.add( self.document_id, data.type, data.author, data.name )
             } else {
-              document_html_class.replace( data.id, data.type, data.author, data.name )
+              document_html_class.replace( self.document_id, data.type, data.author, data.name )
             }
 
             category_form_class.populate_element_div( [[data.id, data.name, data.description]] )
@@ -93,6 +93,8 @@ class document_form {
             document_form_class.form.elements.element.value = data.element
             document_form_class.form.elements.type.value = data.type
             document_form_class.form.elements.link.value = data.link
+            document_form_class.form.elements.name.value = data.name
+
 
             document.getElementById(document_form_class.modal).style.display='Block'
         },
@@ -165,12 +167,11 @@ class document_html {
 
   add( id, type, author, name ){
     //adds the document to the html
-    console.log( this.element_id )
-    console.log( document_html_class.element_id )
     document.getElementById(this.element_id).innerHTML += this._markup(id, type, author, name )
   }
 
   replace( id, type, author, name ){
+
     //removes the current document and replaces it with a new one
     $(`#document_${id}` ).remove()
     this.add( id, type, author, name )

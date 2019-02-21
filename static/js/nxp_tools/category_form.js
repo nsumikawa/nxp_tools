@@ -35,10 +35,28 @@ class category_form {
     this.form.elements.name.value = ''
     this.form.elements.description.value = ''
 
-    //hide the elements block as there will be no previously existing elements
-    document.getElementById(this.elements_div + '_container').style.display='none'
+    var self = this
+    //ajax request to push content to the database.
+    $.ajax({
+        url: url_prefix() + '/ajax/views/category/get_page_info',
+        data: { 'tool' : main_page_class.tool,
+                'type' : main_page_class.type},
+        success: function (data) {
+            //update the form content
+            category_form_class.form.elements.type.value = data.type
+            category_form_class.form.elements.tool.value = data.tool
 
-    document.getElementById(this.modal).style.display='Block'
+            //hide the elements block as there will be no previously existing elements
+            document.getElementById(self.elements_div + '_container').style.display='none'
+
+            document.getElementById(self.modal).style.display='Block'
+
+        },
+        error: function(data) {
+            $("#MESSAGE-DIV").html("Something went wrong!");
+        }
+    });
+
   }
 
   push( ){
@@ -65,16 +83,17 @@ class category_form {
               // add a new entry when one does not exist
               category_html_class.add( data.id, data.name, data.description )
 
+              //append the category in element form
+              $('#id_category').append( $("<option></option>")
+                                        .attr("value", data.id)
+                                        .text(data.name));
+
             } else {
               //replace the existing contents
               category_html_class.replace( data.id, data.name, data.description )
             }
             // $('#category_' + data.id ).remove()
 
-            // $('#id_goal').append( $("<option></option>")
-            //                       .attr("value",key)
-            //                       .text(form_field[key]));
-            //
             document.getElementById(category_form_class.modal).style.display='None'
         },
         error: function(data) {

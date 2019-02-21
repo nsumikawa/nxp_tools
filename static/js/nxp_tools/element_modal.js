@@ -86,6 +86,7 @@ class element_modal_html {
 
     var _markup = this.markup(document[0], document[1], document[2], document[3],
                               document[4], document[5] );
+    // console.log( _markup )
     table.find('tbody').append( _markup );
 
   }
@@ -121,16 +122,31 @@ class element_modal_html {
     return ''
   }
 
+  _download( link, type ){
+    //returns download string for specific data types
+    if( type == 'Template' ){
+      var link_list = link.split('/')
+      var prefix = link_list.slice(0,8).join('/')
+      var suffix = link_list.slice(8,link_list.length).join('/')
+      // console.log( 'prefix----')
+      // console.log( prefix )
+      // console.log( 'suffix----')
+      // console.log( suffix )
+      return prefix + '/_layouts/15/download.aspx?SourceUrl=' + suffix
+    }
+    return link
+  }
 
   markup( id, type, user, link, date, name ){
 
     var image_markup = this._image_markup( type)
     var color = this._color( type )
     var padding = this._padding( type )
+    var _link = this._download( link, type )
 
     var button_markup = ` <a  class="btn btn-primary btn-round ${color}"
                               onclick="element_modal_html_class.view(${id})"
-                              role="button" href="${link}">
+                              role="button" href="${_link}" >
                           ${image_markup}
                         </a>
                         `
