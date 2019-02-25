@@ -76,7 +76,7 @@ ROOT_URLCONF = 'django_config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'static/html')],
+        'DIRS': [os.path.join(BASE_DIR, 'static/html/nxp_tools')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
