@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="panel-header panel-header-sm">
+</div>
+
+<div class="content" id='main'>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+
+        <!-- Card title -->
+        <div class="card-header ">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="card-category">Error Message</h5>
+              <h3 class="card-title" id='main_title'>Are you using Internet Explorer?</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table with Log information -->
+        <div class="card-body" id='category_root'>
+          <div class='row' align='center'>
+            <div class="col" align='center'>
+              <img src="{% static 'images/nxp_tools/Broken.png' %}" class="img-fluid floating">
+            </div>
+          </div>
+
+          <div class='row' align='center'>
+            <div class="col" align='center'>
+              <h3 class="card-title"> This website does not support internet explorer (IE11 or earlier).</h3>
+              <h3 class="card-title"> Please used Chrome, Firefox, edge, or any other brower.</h3>
+              <h3 class="card-title">Thank you </h3>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
